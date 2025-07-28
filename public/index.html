@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrácia na GUESTLIST PARTY</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 500px; margin: 40px auto; }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    input { width: 100%; padding: 8px; margin-top: 5px; }
+    button { margin-top: 20px; padding: 10px; width: 100%; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Registrácia na guestlist</h1>
+  <form method="POST" action="/register">
+    <label>Meno a priezvisko:
+      <input type="text" name="name" required>
+    </label>
+    <label>Instagram (@):
+      <input type="text" name="instagram" required>
+    </label>
+    <label>Mesto:
+      <input type="text" name="city" required>
+    </label>
+    <label>Dátum narodenia (DD/MM/YYYY):
+      <input type="text" name="birthdate" required pattern="\d{2}/\d{2}/\d{4}" placeholder="napr. 28/07/2000">
+    </label>
+    <label>Email:
+      <input type="email" name="email" required>
+    </label>
+    <label>Referral kód (ak si ho dostal):
+      <input type="text" name="referral" required>
+    </label>
+    <label>Koľko je 2 + 3? (antibot):
+      <input type="number" name="captcha" required>
+    </label>
+    <button type="submit">Registrovať sa</button>
+  </form>
+</body>
+</html>
