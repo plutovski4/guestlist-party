@@ -1,19 +1,18 @@
-const express = require("express");
-const path = require("path");
-const fs = require("fs");
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guestlist Form</title>
+</head>
+<body>
+  <form action="/submit" method="POST">
+    <input type="text" name="name" placeholder="Meno" required><br>
+    <input type="text" name="instagram" placeholder="Instagram" required><br>
+    <input type="text" name="city" placeholder="Mesto" required><br>
+    <input type="text" name="birthdate" placeholder="Dátum narodenia" required><br>
+    <button type="submit">Odoslať</button>
+  </form>
+</body>
+</html>
 
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(express.static("public")); // <- Toto sprístupní /public ako frontend
-
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html")); // <- Dôležité!
-});
-
-
-app.listen(PORT, () => {
-  console.log(`Server beží na porte ${PORT}`);
 });
